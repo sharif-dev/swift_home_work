@@ -61,4 +61,11 @@ class Trie {
       }
     }
   }
+    func getWords(m: Int, n: Int, letterDictionary: inout Dictionary<Character, Set<Coordinate>>){
+    for key in self.root.children.keys{
+      root.children[key]!.getWords(m: m, n: n, letterDictionary: &letterDictionary, current: "")
+    }
+  }
+
+}
 
