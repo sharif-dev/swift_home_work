@@ -1,5 +1,21 @@
 import Foundation
 
+let deltas = [
+  (dr: -1, dc: -1),
+  (dr: -1, dc: 0),
+  (dr: -1, dc: 1),
+  (dr: 0, dc: -1),
+  (dr: 0, dc: 1),
+  (dr: 1, dc: -1),
+  (dr: 1, dc: 0),
+  (dr: 1, dc: 1)
+  ]
+
+struct Coordinate: Hashable {
+  let row: Int
+  let col: Int
+}
+
 class TrieNode {
   var letter: Character
   var children: 
