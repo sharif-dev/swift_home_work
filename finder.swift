@@ -42,3 +42,23 @@ class TrieNode {
     }
   }
 }
+class Trie {
+  var root: TrieNode
+  init(words: [String]){
+    self.root = TrieNode(letter: "#", father: nil)
+    for word in words{
+      var current: TrieNode = root
+      var counter = 0
+      for char in word{
+        if(current.children[char] == nil){
+          current.children[char] = TrieNode(letter: char, father: current)
+        }
+        current = current.children[char]!
+        if counter == word.count - 1 {
+          current.whole = true
+        }
+        counter += 1
+      }
+    }
+  }
+
